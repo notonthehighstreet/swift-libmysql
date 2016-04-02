@@ -278,7 +278,7 @@ typedef socket_len_t SOCKET_SIZE_TYPE; /* Used by NDB */
 #define FN_ROOTDIR	"/"
 #endif
 
-/* 
+/*
   MY_FILE_MIN is  Windows speciality and is used to quickly detect
   the mismatch of CRT and mysys file IO usage on Windows at runtime.
   CRT file descriptors can be in the range 0-2047, whereas descriptors returned
@@ -296,16 +296,16 @@ typedef socket_len_t SOCKET_SIZE_TYPE; /* Used by NDB */
 #define MY_FILE_MIN  0
 #endif
 
-/* 
+/*
   MY_NFILE is the default size of my_file_info array.
 
   It is larger on Windows, because it all file handles are stored in my_file_info
-  Default size is 16384 and this should be enough for most cases.If it is not 
+  Default size is 16384 and this should be enough for most cases.If it is not
   enough, --max-open-files with larger value can be used.
 
   For Posix , my_file_info array is only used to store filenames for
   error reporting and its size is not a limitation for number of open files.
-*/ 
+*/
 #ifdef _WIN32
 #define MY_NFILE (16384 + MY_FILE_MIN)
 #else
@@ -470,9 +470,9 @@ typedef unsigned long uint32;
 #if !defined(HAVE_ULONG)
 typedef unsigned long	ulong;		  /* Short for unsigned long */
 #endif
-/* 
-  Using [unsigned] long long is preferable as [u]longlong because we use 
-  [unsigned] long long unconditionally in many places, 
+/*
+  Using [unsigned] long long is preferable as [u]longlong because we use
+  [unsigned] long long unconditionally in many places,
   for example in constants with [U]LL suffix.
 */
 typedef unsigned long long int ulonglong; /* ulong or unsigned long long */
@@ -551,7 +551,7 @@ typedef char		my_bool; /* Small bool */
 
 #define MY_HOW_OFTEN_TO_WRITE	1000	/* How often we want info on screen */
 
-#include <my_byteorder.h>
+#include "my_byteorder.h"
 
 #ifdef HAVE_CHARSET_utf8
 #define MYSQL_UNIVERSAL_CLIENT_CHARSET "utf8"
@@ -602,7 +602,7 @@ typedef char		my_bool; /* Small bool */
 #define bool In_C_you_should_use_my_bool_instead()
 #endif
 
-/* 
+/*
   MYSQL_PLUGIN_IMPORT macro is used to export mysqld data
   (i.e variables) for usage in storage engine loadable plugins.
   Outside of Windows, it is dummy.
@@ -613,7 +613,7 @@ typedef char		my_bool; /* Small bool */
 #define MYSQL_PLUGIN_IMPORT
 #endif
 
-#include <my_dbug.h>
+#include "my_dbug.h"
 
 #ifdef EMBEDDED_LIBRARY
 #define NO_EMBEDDED_ACCESS_CHECKS

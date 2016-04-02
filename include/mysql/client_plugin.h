@@ -100,7 +100,7 @@ struct st_mysql_client_plugin
 struct st_mysql;
 
 /******** authentication plugin specific declarations *********/
-#include <mysql/plugin_auth_common.h>
+#include "plugin_auth_common.h"
 
 struct st_mysql_client_plugin_AUTHENTICATION
 {
@@ -199,4 +199,3 @@ int mysql_plugin_options(struct st_mysql_client_plugin *plugin,
 #endif
 
 #endif
-

@@ -7,7 +7,7 @@ import Darwin
 system("mkdir -p .build/debug")
 
 #if os(Linux)
-    system("cp ./lib/linux-64/* .build/debug")
+    system("cp `find Packages/ -type d -name swift-libmysql*`/lib/linux-64/* .build/debug")
 #else
-    system("cp ./lib/darwin/* .build/debug")
+    system("cp `find Packages/ -type d -name darwin*`/lib/linux-64/* .build/debug")
 #endif
