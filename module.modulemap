@@ -1,0 +1,5 @@
+module LibMySQL {
+    header "shim.h"
+    link "libmysqlclient"
+    export *
+}
